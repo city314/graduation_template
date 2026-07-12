@@ -88,7 +88,9 @@ body {
 
 /* Phần bìa thiệp (Hero Section) */
 .hero-section {
-  height: 50vh;
+  min-height: 100vh; /* SỬA Ở ĐÂY: Đổi height thành min-height để nó tự co giãn, tối thiểu là bằng 1 màn hình */
+  padding: 80px 20px; /* Thêm khoảng trống trên dưới để nội dung không bị dính sát viền */
+
   background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200")
     no-repeat center center/cover;
   position: relative;
