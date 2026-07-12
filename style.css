@@ -439,3 +439,68 @@ footer {
     transform: translateY(-10px);
   }
 }
+
+/* --- TỐI ƯU HÓA HIỂN THỊ TRÊN ĐIỆN THOẠI (RESPONSIVE) --- */
+@media (max-width: 768px) {
+  /* Thu nhỏ chữ ở màn hình chào */
+  .welcome-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  /* Thu nhỏ avatar người tốt nghiệp để vừa màn hình dọc */
+  .graduate-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Giảm cỡ chữ của tên người tốt nghiệp */
+  .main-title {
+    font-size: 3.5rem;
+  }
+
+  .owner-name {
+    font-size: 1.8rem;
+  }
+
+  /* Giảm khoảng cách giữa các phần trong bố cục 2 cột (khi đã xếp dọc) */
+  .main-layout-container {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  /* Giảm kích thước tiêu đề của các section */
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  /* Thu nhỏ một chút các sticker để không chiếm quá nhiều diện tích */
+  .welcome-sticker {
+    max-width: 200px;
+  }
+
+  .info-sticker {
+    max-width: 150px;
+  }
+
+  .footer-sticker {
+    max-width: 120px;
+  }
+
+  /* Điều chỉnh lại nút bật/tắt nhạc cho gọn hơn */
+  .music-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Đảm bảo bản đồ Google hiển thị tốt */
+  .map-container iframe {
+    height: 300px; /* Giảm chiều cao bản đồ trên điện thoại */
+  }
+}
