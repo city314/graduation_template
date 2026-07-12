@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiệp Mời Lễ Tốt Nghiệp từ Thúy Đoàn</title>
+    <!-- THÊM DÒNG NÀY ĐỂ ĐƯA STICKER LÊN TAB TRÌNH DUYỆT -->
+    <link rel="icon" href="sticker_happy.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="welcome-screen">
+      <div class="welcome-content">
+        <h1>Lễ Tốt Nghiệp</h1>
+        <p>Trân trọng gửi đến bạn lời mời đặc biệt...</p>
+        <!-- THÊM STICKER HAPPY VÀO ĐÂY -->
+        <img
+          src="sticker_happy.png"
+          alt="Vui quá đi"
+          class="sticker-img welcome-sticker"
+        />
+        <br />
+        <button id="open-invitation-btn">Mở Thiệp điii ✨</button>
+      </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+      <button id="music-toggle" class="music-btn">🎵 Tắt Nhạc</button>
+
+      <audio id="bg-music" loop>
+        <source src="nhac-nen.mp3" type="audio/mpeg" />
+      </audio>
+
+      <header class="hero-section">
+        <div class="hero-text">
+          <span class="sub-title">Trân trọng kính mời bạn đến dự</span>
+          <h2 class="main-title">LỄ TỐT NGHIỆP</h2>
+          <div class="decorator">🎓</div>
+          <img src="avatar.png" alt="Người tốt nghiệp" class="graduate-img" />
+          <p class="owner-name">NGUYỄN VĂN A</p>
+        </div>
+      </header>
+
+      <!-- THÊM THẺ DIV NÀY ĐỂ BỌC 2 SECTION -->
+      <div class="main-layout-container">
+        <!-- Cột bên trái: Thời Gian & Địa Điểm -->
+        <section class="info-section">
+          <h2>Thời Gian & Địa Điểm</h2>
+          <div class="info-cards">
+            <div class="card">
+              <h3>📅 THỜI GIAN</h3>
+              <p class="highlight-text">10:30 AM - 12:00 AM</p>
+              <p>Thứ Hai, Ngày 20 Tháng 07 Năm 2026</p>
+            </div>
+            <div class="card">
+              <h3>📍 ĐỊA ĐIỂM</h3>
+              <p class="highlight-text">Hội trường</p>
+              <p>Trường Đại học Sư phạm TP.HCM</p>
+            </div>
+          </div>
+
+          <div class="calendar-wrapper">
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85+T%E1%BB%91t+Nghi%E1%BB%87p+C%E1%BB%A7a+M%C3%ACnh&dates=20260720T033000Z/20260720T050000Z&details=Tr%C3%A2n+tr%E1%BB%8Dng+k%C3%ADnh+m%E1%BB%9Di+b%E1%BB%A3n+%C4%91%E1%BA%BFn+d%E1%BB%B1+l%E1%BB%85+t%E1%BB%91t+nghi%E1%BB%87p+c%E1%BB%A7a+m%C3%ACnh%21&location=Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+S%C6%B0+Ph%E1%BA%A1m+TP.HCM"
+              target="_blank"
+              class="calendar-btn"
+            >
+              📅 Thêm vào Google Lịch của bạn
+            </a>
+          </div>
+          <!-- THÊM STICKER LỜI NHẮC VÀO ĐÂY -->
+          <div style="margin-top: 30px">
+            <img
+              src="sticker_welcome.png"
+              alt="Bạn nhớ đến dự nha"
+              class="sticker-img info-sticker"
+            />
+          </div>
+        </section>
+
+        <!-- Cột bên phải: Đường Đến Buổi Lễ -->
+        <section class="map-section">
+          <h2>Đường Đến Buổi Lễ</h2>
+          <p style="margin-bottom: 25px">
+            Dưới đây là sơ đồ khu vực trường và bản đồ chỉ đường để bạn dễ dàng
+            di chuyển nhé!
+          </p>
+
+          <!-- PHẦN HIỂN THỊ ẢNH SƠ ĐỒ TRƯỜNG -->
+          <div class="campus-map-container" style="margin-bottom: 40px">
+            <h3 style="margin-bottom: 15px; color: #7f8c8d">
+              🗺️ Sơ đồ khuôn viên trường
+            </h3>
+            <!-- Thêm thẻ title để hiện chữ gợi ý khi rê chuột vào -->
+            <img
+              src="so-do.jpg"
+              alt="Sơ đồ trường"
+              class="campus-img"
+              title="Nhấn để phóng to và tải về"
+            />
+          </div>
+
+          <!-- THÊM MỚI: CỬA SỔ MODAL (Bị ẩn đi mặc định, chỉ hiện khi click vào ảnh) -->
+          <div id="map-modal" class="hidden">
+            <div class="modal-content">
+              <span class="close-modal">&times;</span>
+              <img
+                src="so-do.jpg"
+                alt="Sơ đồ trường phóng to"
+                class="modal-img"
+              />
+              <p class="modal-note">Mọi người có thể lưu về máy nha! 🥰</p>
+              <!-- Nút tải xuống, thuộc tính download="Tên_file_khi_tải_về.jpg" -->
+              <a
+                href="so-do.jpg"
+                download="So-Do-Truong.jpg"
+                class="download-btn"
+                >⬇️ Tải Xuống</a
+              >
+              <!-- THÊM STICKER CẢM ƠN VÀO ĐÂY -->
+              <div style="margin-top: 30px">
+                <img
+                  src="sticker_welcome.png"
+                  alt="Bạn nhớ đến dự nha"
+                  class="sticker-img info-sticker"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- PHẦN BẢN ĐỒ GOOGLE MAPS -->
+          <div class="map-container">
+            <h3 style="margin-bottom: 15px; color: #7f8c8d; margin-top: 15px">
+              📍 Bản đồ Google Maps
+            </h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.650525192122!2d106.67960847687431!3d10.761393989386509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b91dddf0b%3A0x1ab004c91f448812!2sHo%20Chi%20Minh%20City%20University%20of%20Education!5e0!3m2!1sen!2s!4v1783867965743!5m2!1sen!2s"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </section>
+      </div>
+      <!-- KẾT THÚC THẺ BỌC MAIN-LAYOUT-CONTAINER -->
+
+      <footer>
+        <p>Sự hiện diện của bạn là niềm vinh hạnh lớn cho mình! ❤️</p>
+        <!-- THÊM STICKER CẢM ƠN VÀO ĐÂY -->
+        <img
+          src="sticker_thanks.png"
+          alt="Cảm ơn bạn nhiều"
+          class="sticker-img footer-sticker"
+        />
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

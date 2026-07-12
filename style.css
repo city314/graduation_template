@@ -1,0 +1,441 @@
+/* Khởi tạo cơ bản */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  color: #4a4a4a; /* Chữ xám đen mềm mại, dễ đọc trên nền trắng */
+  background-color: #fffafb; /* Trắng pha chút hồng cực nhẹ */
+  overflow-x: hidden;
+}
+
+/* Định dạng Màn hình chào - Chuyển sang gradient hồng */
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff8a9e 0%, #fecfef 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease;
+}
+
+.welcome-content h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #ffffff; /* Đổi thành trắng tinh */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Nút Mở thiệp trắng chữ hồng */
+#open-invitation-btn {
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #ff758c;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+  transition:
+    transform 0.3s,
+    background-color 0.3s;
+}
+
+#open-invitation-btn:hover {
+  transform: scale(1.05);
+  background-color: #ffe6ea;
+}
+
+/* Class dùng để ẩn màn hình chào/hiển thị trang chính */
+.hidden {
+  display: none !important;
+  opacity: 0;
+}
+
+/* Nút chỉnh nhạc cố định góc phải màn hình - Chữ và viền hồng */
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 10px 18px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ff758c;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ff758c;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.15);
+}
+
+/* Phần bìa thiệp (Hero Section) */
+.hero-section {
+  height: 50vh;
+  background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200")
+    no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Lớp phủ màn hình chính chuyển sang hồng pastel mờ */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 138, 158, 0.5);
+}
+
+.hero-text {
+  position: relative;
+  color: white;
+  z-index: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sub-title {
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 4.5rem;
+  color: #ffffff;
+}
+
+.decorator {
+  font-size: 3rem;
+  margin: 15px 0;
+  animation: bounce 2s infinite;
+}
+
+.owner-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Định dạng chung cho các Section */
+section {
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tiêu đề chính của các phần (Thời gian, Địa điểm) */
+section h2 {
+  font-size: 2.2rem;
+  color: #ff758c;
+  margin-bottom: 35px;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff758c;
+  margin: 10px auto 0 auto;
+}
+
+/* Thẻ thông tin (Thời gian / Địa điểm) */
+.info-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: white;
+  padding: 35px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(255, 117, 140, 0.08);
+  flex: 1;
+  min-width: 280px;
+  border: 1px solid #ffe6ea; /* Viền hồng rất nhạt */
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #999;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.highlight-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff758c; /* Chữ nhấn mạnh màu hồng */
+  margin-bottom: 10px;
+}
+
+/* Nút thêm vào Google Calendar */
+.calendar-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background-color: #ff758c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 117, 140, 0.3);
+  transition: all 0.3s ease;
+}
+
+.calendar-btn:hover {
+  background-color: #ff4d6d; /* Hồng đậm hơn khi di chuột vào */
+  transform: translateY(-2px);
+}
+
+/* Khung chứa Bản đồ */
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(255, 117, 140, 0.15);
+}
+
+/* Footer - Nền hồng chữ trắng */
+footer {
+  background-color: #ff758c;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Hiệu ứng nhún nhảy cho icon mũ cử nhân */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Định dạng cho ảnh Sơ đồ trường */
+.campus-img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(255, 117, 140, 0.1);
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #ffe6ea;
+}
+/* Định dạng ảnh của người tốt nghiệp */
+.graduate-img {
+  width: 300px; /* Độ rộng của ảnh */
+  height: 300px; /* Chiều cao của ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 50%; /* Làm cho ảnh thành hình tròn */
+  border: 5px solid #ffffff; /* Thêm viền trắng cho ảnh */
+  margin: 20px auto; /* Căn giữa và tạo khoảng cách */
+  display: block; /* Hiển thị ảnh như một khối */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng đổ bóng */
+}
+
+/* --- BỐ CỤC CHIA 2 CỘT TRÁI PHẢI --- */
+.main-layout-container {
+  display: flex;
+  flex-direction: column; /* Giao diện mặc định (Điện thoại): Xếp dọc từ trên xuống */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* Ghi đè lại kích thước mặc định của section để vừa vặn với layout mới */
+.main-layout-container section {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Kích hoạt giao diện 2 cột khi màn hình đủ rộng (Máy tính / Laptop / Tablet ngang) */
+@media (min-width: 900px) {
+  .main-layout-container {
+    flex-direction: row; /* Chuyển thành hàng ngang */
+    align-items: flex-start; /* Căn các phần tử sát lên trên cùng */
+  }
+
+  .main-layout-container .info-section,
+  .main-layout-container .map-section {
+    flex: 1; /* Hai bên chia đều 50-50 diện tích hiển thị */
+  }
+
+  /* Thêm một chút khoảng cách ở giữa hai cột cho thoáng mắt */
+  .main-layout-container .info-section {
+    padding-right: 25px;
+  }
+
+  .main-layout-container .map-section {
+    padding-left: 25px;
+  }
+}
+
+/* --- HIỆU ỨNG CHO ẢNH GỐC ĐỂ BIẾT CÓ THỂ BẤM VÀO --- */
+.campus-img {
+  cursor: pointer; /* Đổi con trỏ chuột thành hình bàn tay */
+  transition: transform 0.3s;
+}
+
+.campus-img:hover {
+  transform: scale(1.02); /* Phóng to một chút khi rê chuột vào */
+}
+
+/* --- GIAO DIỆN CỬA SỔ MODAL BẬT LÊN --- */
+#map-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Nền đen mờ */
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fffafb; /* Nền trắng hồng */
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 90%;
+  max-height: 90vh;
+  box-shadow: 0 10px 30px rgba(255, 117, 140, 0.3);
+  animation: popIn 0.3s ease-out; /* Hiệu ứng bật ra */
+}
+
+/* Hiệu ứng bật ra của khung */
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff758c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #ff4d6d;
+}
+
+.modal-img {
+  max-width: 100%;
+  max-height: 60vh;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ffe6ea;
+}
+
+.modal-note {
+  font-size: 1.2rem;
+  color: #ff758c;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ff758c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.download-btn:hover {
+  background-color: #ff4d6d;
+  transform: translateY(-2px);
+}
+
+/* --- ĐỊNH DẠNG CHO CÁC STICKER --- */
+.sticker-img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px; /* Bo góc mượt mà */
+  animation: floatSticker 3s infinite ease-in-out; /* Hiệu ứng nhấp nhô nhẹ */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Tạo bóng đổ nhẹ để nổi bật */
+}
+
+.welcome-sticker {
+  max-width: 250px;
+  margin-bottom: 25px;
+}
+
+.info-sticker {
+  max-width: 180px;
+}
+
+.footer-sticker {
+  max-width: 150px;
+  margin-top: 20px;
+}
+
+/* Tạo hiệu ứng sticker lơ lửng, nhún nhảy */
+@keyframes floatSticker {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
