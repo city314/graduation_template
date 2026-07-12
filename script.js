@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1. Xử lý khi khách bấm nút "Mở Thiệp"
   openBtn.addEventListener("click", function () {
-    // --- QUAN TRỌNG: GỌI PLAY() NGAY LẬP TỨC TẠI ĐÂY ---
-    // Không được để bên trong setTimeout, nếu không iOS sẽ chặn!
+    // --- KHẮC PHỤC LỖI IOS ---
+    // Phải ép trình duyệt load file âm thanh ngay lập tức trong luồng tương tác này
+    bgMusic.load();
+
+    // Sau đó mới gọi hàm phát nhạc
     playMusic();
 
     // Vẫn giữ nguyên hiệu ứng mờ dần màn hình chào
