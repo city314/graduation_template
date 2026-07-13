@@ -338,6 +338,7 @@ footer {
   text-align: center;
 }
 
+/* --- GIAO DIỆN CỬA SỔ MODAL BẬT LÊN --- */
 .modal-content {
   position: relative;
   background-color: #fffafb; /* Nền trắng hồng */
@@ -345,8 +346,21 @@ footer {
   border-radius: 15px;
   max-width: 90%;
   max-height: 90vh;
+
+  /* THÊM DÒNG NÀY ĐỂ FIX LỖI TRÀN NỘI DUNG */
+  overflow-y: auto;
+
   box-shadow: 0 10px 30px rgba(255, 117, 140, 0.3);
   animation: popIn 0.3s ease-out; /* Hiệu ứng bật ra */
+}
+
+/* (Tùy chọn) Làm đẹp thanh cuộn bên trong modal cho tone-sur-tone với màu hồng */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ffb6c1;
+  border-radius: 10px;
 }
 
 /* Hiệu ứng bật ra của khung */
